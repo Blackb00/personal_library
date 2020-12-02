@@ -1,0 +1,19 @@
+﻿
+    <h1>All Books</h1>
+
+    @{
+        foreach (var obj in Model)
+        {
+            <div>
+                <h2><a href="@obj.Author.WikiPage">@obj.Author.Name</a></h2>
+                @{
+                    foreach (var book in obj.AllBooksByAuthor)
+                    {
+                        <p>@book.Name</p>
+                    }
+                }
+            </div>
+
+        }
+    }
+
